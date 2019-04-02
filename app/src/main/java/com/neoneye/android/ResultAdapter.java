@@ -37,6 +37,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
             int probb = (int) (prob*10000);
             prob = probb/100.0;
             holder.prob.setText(String.valueOf(prob) + "%");
+            holder.pesticideName.setText(obj.getString("pesticide_name"));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,11 +56,13 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ViewHolder
 
         private TextView category;
         private TextView prob;
+        private TextView pesticideName;
 
         public ViewHolder(View itemView) {
             super(itemView);
             category = (TextView) itemView.findViewById(R.id.category);
             prob     = (TextView) itemView.findViewById(R.id.probability);
+            pesticideName = (TextView) itemView.findViewById(R.id.pesticide);
         }
     }
 }
